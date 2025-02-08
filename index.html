@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Rasoul Dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="DALL.png">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(10, 10, 10, 0.9);
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .navbar a:hover {
+            color: #65f5d5;
+        }
+        .container, .section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 100px 50px 50px;
+        }
+        .text-content {
+            max-width: 50%;
+            animation: slideFromLeft 1s ease-in-out;
+        }
+        h1 {
+            font-size: 50px;
+            color: #65f5d5;
+        }
+        h1 span {
+            color: white;
+        }
+        p {
+            font-size: 20px;
+            color: #65f5d5;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #65f5d5;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #65f5d5;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .profile-container {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #65f5d5, #0a0a0a);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(101, 245, 213, 0.5);
+            overflow: hidden;
+            animation: float 3s ease-in-out infinite;
+        }
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            animation: zoomIn 1s ease-in-out;
+        }
+        .section {
+            display: none;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes slideFromLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('about')">About Me</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('skills')">Skills</a>
+        <a onclick="showSection('contact')">Contact Me</a>
+    </div>
+
+    <div id="home" class="container">
+        <div class="text-content">
+            <h1>Hello, my name is <span>Mohamed Abdalrasoul</span></h1>
+            <p>I'm an <strong>Engineer</strong></p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/15wijocFeg/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/ittz_mhmd?igsh=cmM5cTNmMTU4bDBt"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:mohamedabdalrasoul0@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://t.me/Enggabdalrasoul"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.linkedin.com/in/mohamed-abdalrasoul-a45648326"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <a href="https://www.linkedin.com/in/mohamed-abdalrasoul-a45648326" class="download-btn" target="_blank">HIRE ME</a>
+
+        </div>
+        <div class="profile-container">
+            <img src="c:\Users\2024\Desktop\nnmh\New folder\kkkj.png" alt="Profile Picture" class="profile-image">
+        </div>
+    </div>
+
+    <div id="about" class="section">
+        <h1>About Me</h1>
+        <p>Mohamed Abdalrasoul Ahmed</p>
+        <p> At Badr University in Assiut </p>
+        <p>Faculty of Artificial Intelligence and Data Management</p>
+    </div>
+
+    <div id="projects" class="section">
+        <h1>Projects</h1>
+        <p>SOON</p>
+    </div>
+
+    <div id="skills" class="section">
+        <h1>Skills</h1>
+        <p>CODER</p>
+    </div>
+
+    <div id="contact" class="section">
+        <h1>Contact Me</h1>
+        <p>************</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelector('.container').style.display = 'none';
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
